@@ -9,21 +9,17 @@
   "servers": [
     {
       "url": "http://srb{resellerid}.srs-x.net/api",
-      "description": "Sandbox API reeller srsx",
       "variables": {
         "resellerid": {
           "default": "84",
           "description": "Reseller ID Anda di srs-x"
         }
-      }
+      },
+      "description": "Sandbox Endpoint"
     },
     {
-      "url": "http://srb84.srs-x.net/api",
-      "description": "Sandbox API srsx"
-    },
-    {
-      "url": "http://srb13.srsx.localhost/api",
-      "description": "Sandbox API Local"
+      "description": "Production Endpoint",
+      "url": "https://srb{resellerid}.srs-x.com/api"
     }
   ],
   "paths": {
@@ -949,7 +945,7 @@
                   "properties": {}
                 },
                 "examples": {
-                  "Success": {
+                  "Success (XML)": {
                     "value": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<epp>\n  <result>\n    <resultCode>1000</resultCode>\n    <resultMsg>Command Complete Successfully</resultMsg>\n  </result>\n  <resultData>\n    <domainid>35</domainid>\n    <api_id>0</api_id>\n    <userid>3</userid>\n    <domain>domain.co.id</domain>\n    <startdate>2013-04-20</startdate>\n    <enddate>2014-04-20</enddate>\n    <contact_registrant>11</contact_registrant>\n    <contact_admin>11</contact_admin>\n    <contact_billing>11</contact_billing>\n    <contact_tech>11</contact_tech>\n    <ns1>ns1.com</ns1>\n    <ns2>ns2.com</ns2>\n    <ns3/>\n    <ns4/>\n    <status>active</status>\n  </resultData>\n</epp>"
                   }
                 }
@@ -964,11 +960,22 @@
             "application/x-www-form-urlencoded": {
               "schema": {
                 "$ref": "../models/domain/domain-info.v1.json"
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "username": "w1vpmqz3",
+                    "password": "aCKeMeE9HcDP4CFgNWXAF9nqrZXp7T29",
+                    "domain": "addin-swagger.com",
+                    "api_id": 277466
+                  }
+                }
               }
             }
           },
           "description": ""
-        }
+        },
+        "parameters": []
       }
     },
     "/domain/updatens": {
@@ -1407,5 +1414,14 @@
       "name": "User",
       "description": "User description"
     }
-  ]
+  ],
+  "components": {
+    "securitySchemes": {
+      "API Key - 1": {
+        "name": "API Key",
+        "type": "apiKey",
+        "in": "query"
+      }
+    }
+  }
 }
