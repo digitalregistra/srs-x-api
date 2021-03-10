@@ -1357,11 +1357,37 @@
             "application/x-www-form-urlencoded": {
               "schema": {
                 "$ref": "../models/alibabamail/alibabamail-renew.v1.json"
+              },
+              "examples": {}
+            },
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "../models/00-general/auth.v1.json"
               }
             }
           }
         },
-        "description": "Renew product Alibaba Mail"
+        "description": "Renew product Alibaba Mail",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query"
+          }
+        ]
       }
     }
   },
@@ -1413,12 +1439,26 @@
   ],
   "components": {
     "securitySchemes": {
-      "API Key - 1": {
-        "name": "API Key",
+      "username": {
+        "name": "API Username",
+        "type": "apiKey",
+        "in": "query",
+        "description": ""
+      },
+      "password": {
+        "name": "API Password",
         "type": "apiKey",
         "in": "query"
       }
     },
     "schemas": {}
-  }
+  },
+  "security": [
+    {
+      "username": []
+    },
+    {
+      "password": []
+    }
+  ]
 }
