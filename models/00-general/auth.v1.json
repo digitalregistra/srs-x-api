@@ -1,0 +1,24 @@
+{
+  "title": "Auth",
+  "type": "object",
+  "x-tags": [
+    "General"
+  ],
+  "description": "",
+  "properties": {
+    "username": {
+      "type": "string",
+      "default": "w1vpmqz3",
+      "description": "API Username"
+    },
+    "password": {
+      "type": "string",
+      "default": "aCKeMeE9HcDP4CFgNWXAF9nqrZXp7T29",
+      "description": "API Password"
+    }
+  },
+  "required": [
+    "username",
+    "password"
+  ]
+}
