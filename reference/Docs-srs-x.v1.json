@@ -1350,11 +1350,7 @@
         "tags": [
           "Alibaba Mail"
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        },
+        "responses": {},
         "operationId": "post-v2-alimail-renew",
         "requestBody": {
           "content": {
@@ -1422,6 +1418,7 @@
         "type": "apiKey",
         "in": "query"
       }
-    }
+    },
+    "schemas": {}
   }
 }
