@@ -115,7 +115,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/atom+xml": {
+                "schema": {
+                  "$ref": ""
+                },
+                "examples": {}
+              },
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
           }
         },
         "operationId": "post-billing-addsubresellerfund",
@@ -217,7 +231,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/atom+xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {}
+              },
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
           }
         },
         "operationId": "post-dns-info",
@@ -913,7 +941,38 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/atom+xml": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "password": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "domain": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "api_id": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "username",
+                    "password",
+                    "domain",
+                    "api_id"
+                  ]
+                }
+              }
+            }
           }
         },
         "operationId": "post-domain-info",
