@@ -1,2 +1,2 @@
-# kb-srsx
-Mencoba menggunakan stoplight.io untuk dokumentasi API kb-srsx
+# SRS-X API
+API Documentation for SRS-X
