@@ -1438,27 +1438,7 @@
     }
   ],
   "components": {
-    "securitySchemes": {
-      "username": {
-        "name": "API Username",
-        "type": "apiKey",
-        "in": "query",
-        "description": ""
-      },
-      "password": {
-        "name": "API Password",
-        "type": "apiKey",
-        "in": "query"
-      }
-    },
+    "securitySchemes": {},
     "schemas": {}
-  },
-  "security": [
-    {
-      "username": []
-    },
-    {
-      "password": []
-    }
-  ]
+  }
 }
